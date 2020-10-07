@@ -4,7 +4,7 @@
 
 # Introduction 
 This client library provides capabilities to add data in memory cache.
-- Tread safe. 
+- Thread safe. 
 - Auto Refresh all data when configured.
 - Easy to configure each data with different source e.g get some data by making call to database.
 - Get timestamp when the data was last updated in the cache.
