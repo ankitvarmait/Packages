@@ -75,12 +75,40 @@ AutoRefresh.UpdateKeyValueWithExistingDataSource(key1);
 ```
 
 ## How to refresh/ update all values
- This calls underline data source configured and saved value for each key.
+ This calls underline data source configured and save value for each key.
  
 ```cs
-            var token = new CancellationTokenSource();
-            token.CancelAfter(5000);
-            await AutoRefresh.RefreshAllValuesAsync(token.Token);
+var token = new CancellationTokenSource();
+token.CancelAfter(5000);
+await AutoRefresh.RefreshAllValuesAsync(token.Token);
+```
+
+## Advanced scenarios: inject dependency for the underline data source
+ 
+```cs
+
+    public class TestValue : ResponseValues
+    {
+		private readonly DataBaseHelper helper;
+        public TestValue(DataBaseHelper helper)
+        {
+            this.helper = helper;
+        }
+
+        public override Func<ResponseValues> GetDataSource()
+        {
+            var response = helper.GetData();
+
+            return () => new TestValue(this.helper)
+            {
+                Data = response
+            };
+        }
+
+        public Dictionary<string, string> Data { get; set; }
+        
+    }
+
 ```
 
 # Contribute
