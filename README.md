@@ -18,7 +18,7 @@ Configure request based authorization at server side with simple JSON based conf
 
 This client library provides capabilities to add cache in memory for data.
 - For more details and features:
-      - [Docs](https://github.com/ankitvarmait/Packages/blob/ankitvarmait-patch-2/Doc/CacheInMemory,md)
+      - [Docs](https://github.com/ankitvarmait/Packages/blob/main/Doc/CacheInMemory.md)
 
 
 # Contribute
