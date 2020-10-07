@@ -11,7 +11,7 @@ List of packages owned with examples.
 
 # CacheInMemory
 
-[![NuGet package](https://img.shields.io/nuget/v/ServerRoleAuth.svg)](https://www.nuget.org/packages/CacheInMemory) 
+[![NuGet package](https://img.shields.io/nuget/v/CacheInMemory.svg)](https://www.nuget.org/packages/CacheInMemory) 
 [![Open Source? No!](https://badgen.net/badge/Open%20Source%20%3F/No%21/blue?icon=github)](https://github.com/ankitvarmait/ServerRoleAuth)
 
 [CacheInMemorye documentation](https://github.com/ankitvarmait/Packages/blob/ankitvarmait-patch-2/Doc/CacheInMemory,md)
