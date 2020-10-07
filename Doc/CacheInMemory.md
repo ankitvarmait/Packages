@@ -8,10 +8,23 @@ This client library provides capabilities to add data in memory cache.
 - Auto Refresh all data when configured.
 - Easy to configure each data with different source e.g get some data by making call to database.
 - Get timestamp when the data was last updated in the cache.
-- Easy to ingrate.
+- Easy to integrate.
 
 # Getting Started
-## How to use it:
+## Install package: 
+[NuGet package](https://img.shields.io/nuget/v/CacheInMemory.svg)](https://www.nuget.org/packages/CacheInMemory) 
+
+## Create a key:
+
+```cs
+ public class TestKey : RequestKey
+    {
+        public override string Name()
+        {
+            return "TestKey1";
+        }
+    }
+`
 
 # Contribute
 Always welcome. Feel free to raise a request from GitHub.
