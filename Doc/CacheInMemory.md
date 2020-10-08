@@ -57,20 +57,20 @@ public class TestValue : ResponseValues
 var key1 = new TestKey();
 var value1 = new TestValue();
 
-AutoRefresh.AddOrUpdateNewValueWithNewDataSource<TestValue, TestKey>(key1, value1);
+InMemoryCache.AddOrUpdateNewValueWithNewDataSource<TestValue, TestKey>(key1, value1);
 
 ```
 ## How to get Value based on the key
 
 ```cs
-var currentValue = AutoRefresh.GetValue(key1);
+var currentValue = InMemoryCache.GetValue(key1);
 ```
 
 ## How to update the value for the key
  This calls underline data source configured and saved value for the key.
  
 ```cs
-AutoRefresh.UpdateKeyValueWithExistingDataSource(key1);
+InMemoryCache.UpdateKeyValueWithExistingDataSource(key1);
 
 ```
 
@@ -80,7 +80,7 @@ AutoRefresh.UpdateKeyValueWithExistingDataSource(key1);
 ```cs
 var token = new CancellationTokenSource();
 token.CancelAfter(5000);
-await AutoRefresh.RefreshAllValuesAsync(token.Token);
+await InMemoryCache.RefreshAllValuesAsync(token.Token);
 ```
 
 ## Advanced scenarios: inject dependency for the underline data source
