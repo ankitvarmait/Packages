@@ -31,7 +31,7 @@ This client library provides capabilities to add data in memory cache.
 ```cs
 public class TestValue : ResponseValues
     {
-        public override Func<ResponseValues> GetDataSource()
+        public override Func<ResponseValues> GetDataSourceAsync()
         {
            // databaseApi/ layer to get data.
            var response = databaseApi.GetData();           
@@ -47,7 +47,10 @@ public class TestValue : ResponseValues
         public Dictionary<string, string> Data { get; set; }
         
         // Also possible to hold multiple value against one key: TestKey
-        public string DomainData { get; set;}        
+	// Add many as properties that you want to return with the same key
+        public string DomainData { get; set;}  
+	
+	// Other properties etc..
     }    
     
 ```
@@ -109,7 +112,7 @@ InMemoryCache.ClearCacheAsync();
             this.helper = helper;
         }
 
-        public override Func<ResponseValues> GetDataSource()
+        public override Func<ResponseValues> GetDataSourceAsync()
         {
             var response = helper.GetData();
 
