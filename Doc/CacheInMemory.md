@@ -96,13 +96,14 @@ InMemoryCache.RemoveKeyAsync(key1);
 InMemoryCache.ClearCacheAsync();
 ```
 
-## Advanced scenarios: inject dependency for the underline data source
+### Advanced scenarios: 
+##Inject dependency for the underline data source
  
 ```cs
 
     public class TestValue : ResponseValues
     {
-		private readonly DataBaseHelper helper;
+	private readonly DataBaseHelper helper;
         public TestValue(DataBaseHelper helper)
         {
             this.helper = helper;
@@ -122,6 +123,12 @@ InMemoryCache.ClearCacheAsync();
         
     }
 
+```
+## Set Expiry policy for the cache value
+
+```cs
+RequestKey.Policy = Policy.EnableCleanup
+RequestKey.ExpiredBy = <timeSpan>
 ```
 
 # Contribute
