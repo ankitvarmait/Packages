@@ -19,11 +19,8 @@ This client library provides capabilities to add data in memory cache.
 ```cs
  public class TestKey : RequestKey
     {
-        public override string Name()
-        {
-         // Not necessary to be unique for each key, it is just an identifier 
-            return "TestKey1";
-        }
+        // Not necessary to be unique for each key, it is just an identifier.
+        public override string Name { get; set; } = "TestKey1";	
     }
 ```
 ## Create a value for the key and configure datasource:
