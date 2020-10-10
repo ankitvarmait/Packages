@@ -57,7 +57,7 @@ public class TestValue : ResponseValues
 var key1 = new TestKey();
 var value1 = new TestValue();
 
-InMemoryCache.AddOrUpdateNewValueWithNewDataSource<TestValue, TestKey>(key1, value1);
+InMemoryCache.AddOrUpdateAsync<TestValue, TestKey>(key1, value1);
 
 ```
 ## How to get Value based on the key
@@ -66,11 +66,11 @@ InMemoryCache.AddOrUpdateNewValueWithNewDataSource<TestValue, TestKey>(key1, val
 var currentValue = InMemoryCache.GetValue(key1);
 ```
 
-## How to update the value for the key
+## How to refresh or update the value for the key
  This calls underline data source configured and saved value for the key.
  
 ```cs
-InMemoryCache.UpdateKeyValueWithExistingDataSource(key1);
+InMemoryCache.RefreshValueAsync(key1);
 
 ```
 
@@ -81,6 +81,19 @@ InMemoryCache.UpdateKeyValueWithExistingDataSource(key1);
 var token = new CancellationTokenSource();
 token.CancelAfter(5000);
 await InMemoryCache.RefreshAllValuesAsync(token.Token);
+```
+## How to remove key from cache
+ This calls underline data source configured and saved value for the key.
+ 
+```cs
+InMemoryCache.RemoveKeyAsync(key1);
+```
+
+## How to remove all keys from cache | Or clear compelete cache
+ This calls underline data source configured and saved value for the key.
+ 
+```cs
+InMemoryCache.ClearCacheAsync();
 ```
 
 ## Advanced scenarios: inject dependency for the underline data source
