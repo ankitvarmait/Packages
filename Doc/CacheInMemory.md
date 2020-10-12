@@ -28,10 +28,13 @@ This client library provides capabilities to add data in memory cache.
 ```cs
 public class TestValue : ResponseValues
     {
-        public override Func<ResponseValues> GetDataSourceAsync()
+        public override async Task<Func<ResponseValues>> GetDataSourceAsync(CancellationToken cancellationToken)
         {
-           // databaseApi/ layer to get data.
-           var response = databaseApi.GetData();           
+	   // Get data
+            var response = new Dictionary<string, string>() { {"Test", "Value"} } ; 
+	   // or even from /external/ databaseApi/ layer to get data.
+           var response = await databaseApi.GetData(); 
+	   
           
            // return the same response value for your data
            return () => new TestValue(this.helper)
@@ -58,12 +61,15 @@ var key1 = new TestKey();
 var value1 = new TestValue();
 
 InMemoryCache.AddOrUpdateAsync<TestValue, TestKey>(key1, value1);
-
+//or
+InMemoryCache.AddOrUpdateAsync<TestValue, TestKey>("TestKey1", value1);
 ```
 ## How to get Value based on the key
 
 ```cs
 var currentValue = InMemoryCache.GetValue(key1);
+//or 
+var currentValue = InMemoryCache.GetValue("TestKey1");
 ```
 
 ## How to refresh or update the value for the key
@@ -71,7 +77,8 @@ var currentValue = InMemoryCache.GetValue(key1);
  
 ```cs
 InMemoryCache.RefreshValueAsync(key1);
-
+//or
+InMemoryCache.RefreshValueAsync("TestKey1");
 ```
 
 ## How to refresh/ update all values
@@ -87,6 +94,8 @@ await InMemoryCache.RefreshAllValuesAsync(token.Token);
  
 ```cs
 InMemoryCache.RemoveKeyAsync(key1);
+//or
+InMemoryCache.RemoveKeyAsync("TestKey1");
 ```
 
 ## How to remove all keys from cache | Or clear compelete cache
@@ -107,18 +116,19 @@ InMemoryCache.ClearCacheAsync();
         public TestValue(DataBaseHelper helper)
         {
             this.helper = helper;
-        }
-
-        public override Func<ResponseValues> GetDataSourceAsync()
-        {
-            var response = helper.GetData();
-
-            return () => new TestValue(this.helper)
+        }       
+        
+	public override async Task<Func<ResponseValues>> GetDataSourceAsync(CancellationToken cancellationToken)
+         {
+           // databaseApi/ layer to get data.
+           var response = await databaseApi.GetData();           
+          
+           // return the same response value for your data
+           return () => new TestValue(this.helper)
             {
                 Data = response
             };
         }
-
         public Dictionary<string, string> Data { get; set; }
         
     }
