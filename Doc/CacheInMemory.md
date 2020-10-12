@@ -60,16 +60,16 @@ public class TestValue : ResponseValues
 var key1 = new TestKey();
 var value1 = new TestValue();
 
-InMemoryCache.AddOrUpdateAsync<TestValue, TestKey>(key1, value1);
+InMemoryCache.AddOrUpdateAsync(key1, value1);
 //or
-InMemoryCache.AddOrUpdateAsync<TestValue, TestKey>("TestKey1", value1);
+InMemoryCache.AddOrUpdateAsync>("TestKey1", value1);
 ```
 ## How to get Value based on the key
 
 ```cs
-var currentValue = InMemoryCache.GetValue(key1);
+var currentValue = InMemoryCache.GetValue<TestValue>(key1);
 //or 
-var currentValue = InMemoryCache.GetValue("TestKey1");
+var currentValue = InMemoryCache.GetValue<TestValue>("TestKey1");
 ```
 
 ## How to refresh or update the value for the key
@@ -90,7 +90,6 @@ token.CancelAfter(5000);
 await InMemoryCache.RefreshAllValuesAsync(token.Token);
 ```
 ## How to remove key from cache
- This calls underline data source configured and saved value for the key.
  
 ```cs
 InMemoryCache.RemoveKeyAsync(key1);
@@ -99,7 +98,6 @@ InMemoryCache.RemoveKeyAsync("TestKey1");
 ```
 
 ## How to remove all keys from cache | Or clear compelete cache
- This calls underline data source configured and saved value for the key.
  
 ```cs
 InMemoryCache.ClearCacheAsync();
