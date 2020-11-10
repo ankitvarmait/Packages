@@ -14,12 +14,20 @@ Configure request based authorization at server side with simple JSON based conf
 
 ## CacheInMemory
 [![NuGet package](https://img.shields.io/nuget/v/CacheInMemory.svg)](https://www.nuget.org/packages/CacheInMemory) 
-[![Open Source? No!](https://badgen.net/badge/Open%20Source%20%3F/No%21/blue?icon=github)](https://github.com/ankitvarmait/ServerRoleAuth)
 
 This client library provides capabilities to add cache in memory for data.
 - For more details and features:
       - [Docs](https://github.com/ankitvarmait/Packages/blob/main/Doc/CacheInMemory.md)
 
+## AsyncScheduler
+[![NuGet package](https://img.shields.io/nuget/v/AsyncScheduler.svg)](https://www.nuget.org/packages/AsyncScheduler) 
+This client library provides capabilities to configure activities that is Task and run in memory either in asynchronously or synchronously.
+Create as many as activity (jobs that you want to run).
+Configure to run all activities or one activity.
+Container support to easily register dependencies.
+ 
+- For more details and features:
+      - [Docs](https://github.com/ankitvarmait/Packages/blob/main/Doc/AsyncScheduler.md)
 
 ## Contribute
 Always welcome. Feel free to raise a request from GitHub.
