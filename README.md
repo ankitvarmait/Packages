@@ -21,6 +21,7 @@ This client library provides capabilities to add cache in memory for data.
 
 ## AsyncScheduler
 [![NuGet package](https://img.shields.io/nuget/v/AsyncScheduler.svg)](https://www.nuget.org/packages/AsyncScheduler) 
+
 This client library provides capabilities to configure activities that is Task and run in memory either in asynchronously or synchronously.
 Create as many as activity (jobs that you want to run).
 Configure to run all activities or one activity.
