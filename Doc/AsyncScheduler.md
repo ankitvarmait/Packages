@@ -8,6 +8,7 @@
 - Create as many as activity (jobs that you want to run). 
 - Configure to run all activities or one activity. 
 - Container support to easily register dependencies.
+- Corn syntext based scheduling.
 
 # Getting Started
 ## Install package: 
