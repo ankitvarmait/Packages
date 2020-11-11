@@ -34,10 +34,8 @@
             await task1;
         }
 
-        public string Name()
-        {
-            return nameof(Activity1);
-        }
+        public string Name { get; set; } = nameof(Activity1);
+        public string CornSchedule { get; set; } = "*/2 * * * *";
     }
     
     public class Activity2 : IActivity
@@ -63,10 +61,8 @@
             await task1;
         }
 
-        public string Name()
-        {
-            return nameof(Activity2);
-        }
+        public string Name { get; set; } = nameof(Activity2);
+        public string CornSchedule { get; set; } = "*/1 * * * *"; 
     }
 ```
 ## Create configurations for runner:
@@ -97,9 +93,30 @@
 ## Run it
 
 ```cs
- await ActivityRunner.RunAsync(option, default(CancellationToken));
+ await ActivityRunner.RunActivitiesAsync(option, default(CancellationToken));
 ```
 
+# TraceSource
+Redirect trace to console app
+```cs
+            TraceSource ts = new TraceSource("SchedulerApp");
+            ts.Switch.Level = SourceLevels.All;
+            ts.Listeners.Remove(new DefaultTraceListener());
+            ts.Listeners.Add(new ConsoleTraceListener());
+            
+            var option = new Options()
+            {
+                ActivityToRun = "Activity2", 
+                TraceSource = ts
+            };
+```
+
+# Container Support
+
+```cs
+      Registration.Register<TFrom, TTo>(params InjectionMember[] injectionMembers);
+      Registration.Resolve<TFrom>();
+```
 
 # Contribute
 Always welcome. Feel free to raise a request from GitHub.
