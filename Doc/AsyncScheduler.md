@@ -2,11 +2,11 @@
 # AsyncScheduler
 
 # Introduction 
-- Thread safe. 
-- Easy to integrate.
 - This client library provides capabilities to configure activities that is Task and run in memory either in asynchronously or synchronously.  
 - Create as many as activity (jobs that you want to run). 
 - Configure to run all activities or one activity. 
+- Thread safe. 
+- Easy to integrate.
 - Container support to easily register dependencies.
 - Corn syntext based scheduling.
 
@@ -19,7 +19,7 @@
 ```cs
     public class Activity1 : IActivity
     {
-        public async Task ExecuteAsync(TraceSource ts, CancellationToken cancellationtoken)
+        public async Task ExecuteAsync(TraceSource ts, Guid uniqueRunId, CancellationToken cancellationtoken)
         {
             Task task1 = Task.Factory.StartNew(() =>
             {
@@ -41,7 +41,7 @@
     
     public class Activity2 : IActivity
     {
-        public async Task ExecuteAsync(TraceSource ts, CancellationToken cancellationtoken)
+        public async Task ExecuteAsync(TraceSource ts, Guid uniqueRunId, CancellationToken cancellationtoken)
         {
             Task task1 = Task.Factory.StartNew(() =>
             {
