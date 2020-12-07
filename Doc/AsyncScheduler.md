@@ -118,6 +118,21 @@ Redirect trace to console app
       Registration.Register<TFrom, TTo>(params InjectionMember[] injectionMembers);
       Registration.Resolve<TFrom>();
 ```
+# Get framework traces, exceptions 
+
+```cs
+      ActivityRunner.Notify += ActivityRunner_Notify;
+      
+      private static void ActivityRunner_Notify(object sender, SchedulerEventArgs e)
+        {
+            var propertis = new Dictionary<string, string>
+            {
+                { "TrackingId", e.RunId.ToString() }
+            };
+
+            telemetry?.TrackException((e.Data as Exception), propertis);
+        }
+```
 
 # Contribute
 Always welcome. Feel free to raise a request from GitHub.
