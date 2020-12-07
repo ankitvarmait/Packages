@@ -133,6 +133,14 @@ Redirect trace to console app
             telemetry?.TrackException((e.Data as Exception), propertis);
         }
 ```
+# Stop running jobs by conditions : From other thread.
+
+```cs
+       var option = new Options()
+            {
+                StopJobOn { get; set; } = () => false; // Condition to check at run time before starting the new run to stop scheduled job..
+            };
+```
 
 # Contribute
 Always welcome. Feel free to raise a request from GitHub.
