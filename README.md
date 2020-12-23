@@ -31,10 +31,9 @@ This client library provides capabilities to configure activities that is Task a
 [![NuGet package](https://img.shields.io/nuget/v/AI.Search.svg)](https://www.nuget.org/packages/AI.Search) 
 
 This client library provides capabilities to perform search on Azure search service without sdk dependencies. 
-    - [Docs](https://github.com/ankitvarmait/Packages/blob/main/Doc/AISearch.md)
-
+    
 - For more details and features:
-      - [Docs](https://github.com/ankitvarmait/Packages/blob/main/Doc/AsyncScheduler.md)
+      - [Docs](https://github.com/ankitvarmait/Packages/blob/main/Doc/AISearch.md)
       
 ## Contribute
 Always welcome. Feel free to raise a request from GitHub.
