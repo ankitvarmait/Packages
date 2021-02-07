@@ -36,12 +36,12 @@ This client library provides capabilities to perform search on Azure search serv
       - [Docs](https://github.com/ankitvarmait/Packages/blob/main/Doc/AISearch.md)
 
 ## AI.RuleEngine
-[![NuGet package](https://img.shields.io/nuget/v/AI.Search.svg)](https://www.nuget.org/packages/AI.RuleEngine) 
+[![NuGet package](https://img.shields.io/nuget/v/AI.RuleEngine.svg)](https://www.nuget.org/packages/AI.RuleEngine) 
 
 This client library provides capabilities to configures rules and return configurations by evaluation of conditions configured. 
     
 - For more details and features:
-      - [Docs](https://github.com/ankitvarmait/Packages/blob/main/Doc/AISearch.md)
+      - [Docs](https://github.com/ankitvarmait/Packages/blob/main/Doc/AIRuleEngine.md)
       
 ## Contribute
 Always welcome. Feel free to raise a request from GitHub.
