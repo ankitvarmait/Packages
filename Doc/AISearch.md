@@ -11,7 +11,7 @@
 
 # Getting Started
 ## Install package: 
-[![NuGet package](https://img.shields.io/nuget/v/AI.Search.svg)](https://www.nuget.org/packages/AI.Search)
+[![NuGet package](https://img.shields.io/nuget/v/AI.RuleEngine.svg)](https://www.nuget.org/packages/AI.RuleEngine)
 
 ## Define configurations:
 
