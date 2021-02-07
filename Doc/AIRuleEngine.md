@@ -73,4 +73,25 @@ Configure simple json based rules configurations.
       await engine.SetupRulesAsync(data);
 ```
 
- 
+ ## Get all supported configurations for group = 'Group2' from RuleId = 'TestRules',  for Role 'Admin2'
+   
+   
+```cs    
+     await engine.GetConfigurationValuesAsync("TestRules", "Group2", ("Role", "Admin2", "*"));
+```
+
+ ## Get 'config1' configuration for group = 'Group2' from RuleId = 'TestRules',  for Role 'Admin2'
+   
+   
+```cs    
+     await engine.GetConfigurationValuesAsync("TestRules", "Group2", ("Role", "Admin2", "config1"));
+```
+
+ ## Get 'config1' configuration from RuleId = 'TestRules',  for Role 'Admin2'
+   
+   
+```cs    
+     await engine.GetConfigurationValuesAsync("TestRules", "*", ("Role", "Admin2", "config1"));
+```
+
+
