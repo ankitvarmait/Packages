@@ -52,7 +52,8 @@ Configure simple json based rules configurations.
 # Getting Started
    
 ## Install package: 
-    [![NuGet package](https://img.shields.io/nuget/v/AI.RuleEngine.svg)](https://www.nuget.org/packages/AI.RuleEngine)
+
+[![NuGet package](https://img.shields.io/nuget/v/AI.RuleEngin.svg)](https://www.nuget.org/packages/AI.RuleEngin/)
     
 ## Define configurations:
     
