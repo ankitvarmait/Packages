@@ -49,21 +49,21 @@ Configure simple json based rules configurations.
 
 	 ```
    
-   # Getting Started
+# Getting Started
    
-   ## Install package: 
+## Install package: 
     [![NuGet package](https://img.shields.io/nuget/v/AI.RuleEngine.svg)](https://www.nuget.org/packages/AI.RuleEngine)
     
-   ## Define configurations:
+## Define configurations:
     
-   ## Create the instance:
+## Create the instance:
    
    
 ```cs    
     IRuleEngine engine = await RuleEngineFactory.CreateRuleEngineAsync();
 ```
 
-   ## Setup Rules:
+## Setup Rules:
    
    
 ```cs    
