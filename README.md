@@ -43,6 +43,14 @@ This client library provides capabilities to configures rules and return configu
 - For more details and features:
       - [Docs](https://github.com/ankitvarmait/Packages/blob/main/Doc/AIRuleEngine.md)
       
+## Visual Studio Extension : Drink Water Reminder
+<img src="http://vsmarketplacebadge.apphb.com/version-short/ankitvarmait.DrinkWaterReminder.svg" alt="Visual Studio Marketplace">
+
+A Visual Studio Extension, that reminds you to drink water, that take care of your health directly on Visual Studio. If you are too busy while developing applications to remember having to drink enough and regularly, this will try to help you solve that problem.
+    
+- For more details and features:
+      - [Docs](https://github.com/ankitvarmait/DrinkWaterReminder)
+      
 ## Contribute
 Always welcome. Feel free to raise a request from GitHub.
 
